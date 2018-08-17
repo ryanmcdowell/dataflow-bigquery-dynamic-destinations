@@ -1,12 +1,12 @@
 # Dataflow BigQuery Dynamic Destinations
 
-Occasionally you may have data being ingested into a single topic which requires dynamically routing
-to an output table in BigQuery. One way to accomplish this is to use a message attribute on the
-header of the Pub/Sub message to indicate the table which the message should be routed to. The
-routing of the messages to the correct table can be accomplished in a single pipeline by using the 
-`BigQueryIO` transform's dynamic destination capabilities. In this pipeline, a 
-`SerializableFunction` is used to extract the table attribute from the Pub/Sub message and then 
-subsequently route to the proper table destination. 
+Occasionally you may have data of different domains being ingested into a single topic which 
+requires dynamically routing to the proper output table in BigQuery. One way to accomplish this is 
+to use a message attribute on the header of the Pub/Sub message to indicate the table which the 
+message should be routed to. The routing of the messages to the correct table can be accomplished in 
+a single pipeline by using the `BigQueryIO` transform's dynamic destination capabilities. In this 
+pipeline, a `SerializableFunction` is used to extract the table attribute from the Pub/Sub message 
+and then subsequently route to the proper table destination. 
 
 
 ## Pipeline
